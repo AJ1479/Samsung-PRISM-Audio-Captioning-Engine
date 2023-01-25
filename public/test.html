@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/test.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source Sans Pro"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/player.css" />
+    <link rel="stylesheet" href="css/text.css" />
+  </head>
+
+  <body>
+    <div class="options">
+      <div id="card1" class="option active">
+        <div class="shadow"></div>
+        <div id="iframe_upload" class="visible">
+          <form
+            action="/file_upload"
+            name="form"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="card-contents">
+              <div class="button ar">
+                <div class="arrow" onclick="triggerClick1()">
+                  <i class="fa-2x fa-solid fa-arrow-up"></i>
+                </div>
+
+                <div class="upload">UPLOAD AUDIO</div>
+              </div>
+              <input
+                class="none"
+                type="file"
+                name="file"
+                accept="audio/wav"
+                id="audioFile"
+              />
+
+              <div class="container hidden">
+                <div class="column add-bottom">
+                  <div id="mainwrap">
+                    <div id="nowPlay">
+                      <span id="npAction">Paused</span
+                      ><span id="npTitle"></span>
+                    </div>
+                    <div id="audiowrap">
+                      <div id="audio0">
+                        <audio id="audio1" preload controls>
+                          Your browser does not support HTML5 Audio! 😢
+                        </audio>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="getInfo" class="button get-info hidden">
+                <div class="arrow">Get Information</div>
+              </div>
+            </div>
+            <div id="info1"></div>
+            <input type="submit" class="submit hidden" />
+
+            <div class="button submit-button" onclick="triggerClick()">
+              <div class="arrow">Predict</div>
+            </div>
+          </form>
+          <div class="prediction">ML Prediction Here</div>
+        </div>
+        <div class="label">
+          <div class="icon">
+            <i class="fas fa-walking"></i>
+          </div>
+          <div class="info">
+            <div class="main">Upload</div>
+            <div class="sub">Audio files from your computer</div>
+          </div>
+        </div>
+      </div>
+      <div class="option option2" id="card2">
+        <div class="shadow"></div>
+        <iframe
+          src="./test2.html"
+          allow="camera;microphone"
+          height="100%"
+          width="100%"
+          class="iframe1 invisible"
+        ></iframe>
+        <div class="label">
+          <div class="icon">
+            <i class="fas fa-snowflake"></i>
+          </div>
+          <div class="info">
+            <div class="main">Record</div>
+            <div class="sub">Audio via microphone</div>
+          </div>
+        </div>
+      </div>
+      <div class="option option3" id="card3">
+        <div class="shadow"></div>
+        <!-- placeholder for page3 internal audio recording -->
+        <iframe
+          src="test3.html"
+          class="iframe2 invisible"
+          allow="camera;microphone"
+          height="100%"
+          width="100%"
+        ></iframe>
+        <div class="label">
+          <div class="icon">
+            <i class="fas fa-tree"></i>
+          </div>
+          <div class="info">
+            <div class="main">Record</div>
+            <div class="sub">Internal Audio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+    <script type="text/javascript" src="js/audioApi.js"></script>
+    <script type="text/javascript" src="js/musicPlayer.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script src="js/index2.js"></script>
+  </body>
+</html>

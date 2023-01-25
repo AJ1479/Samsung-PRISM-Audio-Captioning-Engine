@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/page2.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source Sans Pro"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/player.css" />
+    <link rel="stylesheet" href="css/text.css" />
+  </head>
+
+  <body>
+    <div class="visible">
+      <form
+        action="/file_upload"
+        method="post"
+        name="form"
+        enctype="multipart/form-data"
+      >
+        <div class="outermost">
+          <div>
+            <div class="container2">
+              <div class="player">
+                <div class="header-player" onclick="isRecorded()">
+                  <div class="audio-record">
+                    <input
+                      type="checkbox"
+                      id="audio_record-icon"
+                      name="audio_record-icon"
+                    />
+                    <label
+                      for="audio_record-icon"
+                      class="player-icon audio_record-icon"
+                    >
+                      <i class="material-icons" title="microphone">mic</i>
+                    </label>
+                  </div>
+                  <div class="audio-properties">
+                    <div class="audio_record-control">
+                      <button
+                        class="btn btn-default player-icon save"
+                        id="save-recording"
+                        onclick="saveRecording();"
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="upload">RECORD AUDIO VIA MICROPHONE</div>
+            <input
+              class="none"
+              type="file"
+              name="file"
+              accept="audio/*"
+              id="audioFile"
+              class="hidden"
+            />
+            <div id="record-audio"></div>
+            <span id="clicks"></span>
+          </div>
+          <div>
+            <div class="container1 hidden">
+              <div class="column add-bottom">
+                <div id="mainwrap">
+                  <div id="nowPlay">
+                    <span id="npAction">Paused</span>
+                    <span id="npTitle"></span>
+                  </div>
+                  <div id="audiowrap">
+                    <div id="audio0">
+                      <audio id="audio1" preload controls>
+                        Your browser does not support HTML5 Audio! 😢
+                      </audio>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="getInfo" class="button get-info hidden">
+            <div class="arrow">Get Information</div>
+          </div>
+        </div>
+
+        <div id="info1"></div>
+
+        <input type="submit" class="submit hidden" />
+        <div class="search-form">
+          <div>
+            <input required name="cap1" class="caption cap1" type="text" />
+          </div>
+          <button class="text-button t1" onclick="click3('1')">
+            <div class="click click1">Caption 1</div>
+          </button>
+        </div>
+        <br />
+        <br />
+        <div class="search-form">
+          <input required name="cap2" class="caption cap2" type="text" />
+          <button class="text-button t1" onclick="click3('2')">
+            <div class="click click2">Caption 2</div>
+          </button>
+        </div>
+        <br />
+        <br />
+        <div class="search-form">
+          <input required name="cap3" class="caption cap3" type="text" />
+          <button class="text-button t1" onclick="click3('3')">
+            <div class="click click3">Caption 3</div>
+          </button>
+        </div>
+        <br />
+        <br />
+        <div class="search-form">
+          <input required name="cap4" class="caption cap4" type="text" />
+          <button class="text-button t1" onclick="click3('4')">
+            <div class="click click4">Caption 4</div>
+          </button>
+        </div>
+        <br />
+        <br />
+        <div class="search-form">
+          <input required name="cap5" class="caption cap5" type="text" />
+          <button class="text-button t1" onclick="click3('5')">
+            <div class="click click5">Caption 5</div>
+          </button>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="button submit-button" onclick="uploadData()">
+          <div class="arrow">Submit</div>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"></script>
+    <script type="text/javascript" src="js/audioApi.js"></script>
+    <script type="text/javascript" src="js/musicPlayer.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/page2.js"></script>
+    <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+  </body>
+</html>

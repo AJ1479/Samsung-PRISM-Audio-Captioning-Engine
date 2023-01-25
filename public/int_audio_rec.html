@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/page2.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source Sans Pro"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/player.css" />
+    <link rel="stylesheet" href="css/text.css" />
+    <script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
+    <script src="./js/videoBlobDuration.js"></script>
+    <script src="./js/audioConverter.js"></script>
+  </head>
+
+  <body>
+    <div class="visible">
+      <div class="outermost">
+        <div>
+          <div class="container2">
+            <div class="player">
+              <div class="header-player" id="int_screen_rec_button">
+                <div class="audio-record" id="int_screen_rec_button">
+                  <input
+                    type="checkbox"
+                    id="audio_record-icon"
+                    name="audio_record-icon"
+                  />
+                  <label
+                    for="audio_record-icon"
+                    class="player-icon audio_record-icon"
+                  >
+                    <i class="material-icons" title="microphone">graphic_eq</i>
+                  </label>
+                </div>
+                <div class="audio-properties">
+                  <div class="audio_record-control">
+                    <button
+                      class="btn btn-default player-icon save"
+                      id="save-recording"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="upload">
+            RECORD AUDIO VIA
+            <span
+              style="text-decoration: underline; text-underline-offset: 2px"
+              onclick="onShareScreen()"
+              >SCREEN SHARE</span
+            >
+          </div>
+          <input
+            class="none"
+            type="file"
+            name="file"
+            accept="audio/*"
+            id="audioFile"
+            class="hidden"
+          />
+          <div id="record-audio"></div>
+          <span id="clicks"></span>
+        </div>
+        <div style="flex-grow: 1">
+          <div class="container1 hidden" id="audioPlayer1">
+            <div class="column add-bottom">
+              <div id="mainwrap">
+                <div id="nowPlay">
+                  <span id="npAction">Paused</span>
+                  <span id="npTitle"></span>
+                </div>
+                <div id="audiowrap">
+                  <div id="audio0">
+                    <audio id="audio1" preload controls>
+                      Your browser does not support HTML5 Audio! 😢
+                    </audio>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="getInfo" class="button get-info hidden">
+          <div class="arrow">Get Information</div>
+        </div>
+      </div>
+
+      <div id="info1"></div>
+
+      <a
+        class="hidden"
+        id="downloadLink"
+        download="mediarecorder.webm"
+        name="mediarecorder.webm"
+        href
+      ></a>
+      <a
+        class="hidden"
+        id="downloadAudio"
+        download="screenrecord.wav"
+        name="screenrecord.wav"
+        href
+      ></a>
+
+      <input type="submit" class="submit hidden" />
+      <div class="search-form">
+        <div><input name="cap1" class="caption cap1" type="text" /></div>
+        <button class="text-button t1" onclick="click3('1')">
+          <div class="click click1">Caption 1</div>
+        </button>
+      </div>
+      <br />
+      <br />
+      <div class="search-form">
+        <input name="cap2" class="caption cap2" type="text" />
+        <button class="text-button t1" onclick="click3('2')">
+          <div class="click click2">Caption 2</div>
+        </button>
+      </div>
+      <br />
+      <br />
+      <div class="search-form">
+        <input name="cap3" class="caption cap3" type="text" />
+        <button class="text-button t1" onclick="click3('3')">
+          <div class="click click3">Caption 3</div>
+        </button>
+      </div>
+      <br />
+      <br />
+      <div class="search-form">
+        <input name="cap4" class="caption cap4" type="text" />
+        <button class="text-button t1" onclick="click3('4')">
+          <div class="click click4">Caption 4</div>
+        </button>
+      </div>
+      <br />
+      <br />
+      <div class="search-form">
+        <input name="cap5" class="caption cap5" type="text" />
+        <button class="text-button t1" onclick="click3('5')">
+          <div class="click click5">Caption 5</div>
+        </button>
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <button
+        class="hidden"
+        style="background-color: white"
+        id="rec"
+        onclick="onBtnRecordClicked()"
+        disabled
+      >
+        Record
+      </button>
+      <button
+        class="hidden"
+        style="background-color: white"
+        id="stop"
+        onclick="onBtnStopClicked()"
+        disabled
+      >
+        Stop
+      </button>
+
+      <div class="button submit-button" onclick="uploadData()">
+        <div class="arrow">Submit</div>
+      </div>
+    </div>
+
+    <script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"></script>
+    <script type="text/javascript" src="js/audioApi.js"></script>
+    <script type="text/javascript" src="js/musicPlayer.js"></script>
+    <!-- <script type="text/javascript" src="js/common.js"></script> -->
+    <script type="text/javascript" src="js/pg2.js"></script>
+    <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+
+    <script></script>
+    <script src="./js/int_audio_rec.js"></script>
+  </body>
+</html>

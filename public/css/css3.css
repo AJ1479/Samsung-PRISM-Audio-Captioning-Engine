@@ -1,0 +1,86 @@
+.player-icon {
+  color: #007bff;
+  margin-right: 5px;
+}
+.player-icon:hover {
+  color: #000;
+}
+.container2 {
+  background: #fff;
+  height: 70px;
+  width: 70px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+}
+.header-player {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 60px auto;
+}
+.header-player .audio-record {
+  display: flex;
+  align-items: center;
+}
+.header-player .audio-record i {
+  color: #007bff;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 1px;
+}
+.header-player .audio-record input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+}
+.header-player .audio-record input[type="checkbox"]:checked ~ label i {
+  color: #fff;
+  background: #007bff;
+  border-radius: 100%;
+  animation: shadow-expansion 0.9s ease-in-out infinite alternate;
+}
+.header-player .audio-properties .audio_record-control {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+@keyframes shadow-expansion {
+  from {
+    box-shadow: 0 0 0 5px #007bff;
+  }
+  to {
+    box-shadow: 0 0 0 0 #007bff;
+  }
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#clicks {
+  border-radius: 50%;
+  background-color: red;
+  width: 20px;
+  height: 15px;
+  position: absolute;
+  display: none;
+}
+.save {
+  position: relative;
+  left: 0;
+  top: -20px;
+  z-index: 100;
+}
+.outermost {
+  color: #fff;
+  font-family: "Source Sans Pro", arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+#nowPlay > span {
+  width: fit-content;
+  padding: 0;
+  padding-left: 21px;
+}
+#getInfo {
+  margin-top: 10px;
+}

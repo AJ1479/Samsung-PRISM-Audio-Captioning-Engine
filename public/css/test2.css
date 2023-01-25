@@ -1,0 +1,240 @@
+@import url(https://pro.fontawesome.com/releases/v5.11.2/css/all.css);
+:root {
+  --user-button-circle: rgba(0, 0, 0, 0.025);
+  --user-button-cardborder: rgba(255, 255, 255, 0.25);
+  --user-button-text: #323133;
+  --user-button-shadow: rgba(0, 0, 0, 0.1);
+}
+@-webkit-keyframes slide {
+  0%,
+  50% {
+    opacity: 0;
+    display: block !important;
+  }
+  100% {
+    opacity: 1;
+    display: block !important;
+  }
+}
+@keyframes slide {
+  0%,
+  50% {
+    opacity: 0;
+    display: block !important;
+  }
+  100% {
+    opacity: 1;
+    display: block !important;
+  }
+}
+@-webkit-keyframes diespin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes diespin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body {
+  height: 100vh;
+  font-family: Roboto, sans-serif;
+  transition: 0.25s;
+}
+@media (prefers-color-scheme: dark) {
+  body:not(.light) {
+    background: #232223;
+    color: #fff;
+  }
+}
+.button {
+  width: fit-content;
+  height: fit-content;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f5f9ff;
+  font-family: "Source Sans Pro", arial, sans-serif;
+  color: #275efe;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.arrow {
+  margin: auto;
+  padding: auto;
+}
+#info1 {
+  height: fit-content;
+  word-wrap: break-word;
+  margin: 15px 0px 25px 0px;
+  color: #fff;
+  font-family: "Source Sans Pro", arial, sans-serif;
+}
+.submit-button {
+  margin: 0 auto;
+}
+.click {
+  color: #fff;
+  left: 50px;
+  position: relative;
+  font-family: "Source Sans Pro", arial, sans-serif;
+  white-space: nowrap;
+  font-size: medium;
+}
+.player-icon {
+  color: #007bff;
+  margin-right: 5px;
+}
+.player-icon:hover {
+  color: #000;
+}
+.container2 {
+  background: #fff;
+  height: 70px;
+  width: 70px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+}
+.header-player {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 60px auto;
+}
+.header-player .audio-record {
+  display: flex;
+  align-items: center;
+}
+.header-player .audio-record i {
+  color: #007bff;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 1px;
+}
+.header-player .audio-record input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+}
+.header-player .audio-record input[type="checkbox"]:checked ~ label i {
+  color: #fff;
+  background: #007bff;
+  border-radius: 100%;
+  animation: shadow-expansion 0.9s ease-in-out infinite alternate;
+}
+.header-player .audio-properties .audio_record-control {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+@keyframes shadow-expansion {
+  from {
+    box-shadow: 0 0 0 5px #007bff;
+  }
+  to {
+    box-shadow: 0 0 0 0 #007bff;
+  }
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#clicks {
+  border-radius: 50%;
+  background-color: red;
+  width: 20px;
+  height: 15px;
+  position: absolute;
+  display: none;
+}
+.save {
+  position: relative;
+  left: 0;
+  top: -20px;
+  z-index: 100;
+}
+body {
+  margin: 0;
+  transition-property: none;
+}
+
+body > div {
+  height: 100vh;
+}
+
+body > div > form {
+  width: 100%;
+}
+
+body > div > form > div > div:nth-child(2) {
+  flex-grow: 1;
+}
+
+.none {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+.outermost {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+}
+.outermost > :first-child {
+  display: flex;
+  flex-direction: row;
+}
+
+#npTitle {
+  color: white;
+}
+#npAction {
+  color: white;
+  width: fit-content;
+  padding: 0px;
+  padding-left: 21px;
+}
+
+.upload {
+  padding: 15px;
+  padding: 25px;
+  color: #f5f9ff;
+  font-weight: bold;
+}
+
+#getInfo {
+  margin-top: 10px;
+}
+
+.prediction {
+  border-color: white;
+  border-radius: 40px;
+  height: 38%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 40px;
+  border-style: solid;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  font-family: "Source Sans Pro", arial, sans-serif;
+  font-size: x-large;
+}
